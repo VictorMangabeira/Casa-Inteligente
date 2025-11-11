@@ -1,11 +1,13 @@
 /* ======== ESTILIZAÇÃO BÁSICA ======== */
-* {
+* 
+{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: 0;
 }
 
-body {
+body 
+{
     font-family: 'Segoe UI', Roboto;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #1a1a1a;
@@ -30,18 +32,31 @@ header h1
    margin-bottom: 5px; 
 }
 
-header p {
+header p 
+{
     color: #666;
     font-size: 14px;
 }
 
 /* ================== SEÇÃO DE CÔMODOS ================== */
 
-.comodos-section {
+main
+{
+    margin: 30px auto;
+    padding: 0, 15px;
+    /* Máximo de pixeis que vai ter */
+    max-width: 1200px;
+}
+
+/* Configuração das seções  */
+.comodos-section 
+{
     margin-bottom: 40px;
 }
 
-.titulo-section {
+/* Configuração dos titulo das seções */
+.titulo-section 
+{
     font-size: 18px;
     font-weight: 600;
     color: #fff;
@@ -51,40 +66,164 @@ header p {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.dispositivo-card {
+/* Configuração dos cards */
+.dispositivo-card 
+{
     border-radius: 16px;
     padding: 20px;
     border: none;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     color: #fff;
+    /* Máximo de pixeis  */
     max-width: 300px;
+    /* Minimo de pixeis */
+    min-width: 250px;
     font-weight: 500;
 }
 
-.dispositivo-card[data-type="lampada"]{
+/* Configurando a cor de cada card */
+
+.dispositivo-card[data-type="lampada"]
+{
     background: linear-gradient(135deg, #f7b731 0%, #f4a017 100%);
 }
 
-.dispositivo-card[data-type="cortina"]{
+.dispositivo-card[data-type="cortina"]
+{
     background: linear-gradient(135deg, #ff6b6b 0%, #ee5a2f 100%);
 }
 
-.dispositivo-card[data-type="porta"]{
+.dispositivo-card[data-type="porta"]
+{
     background: linear-gradient(135deg, #00d2d3 0%, #00a8a8 100%);
 }
 
-.dispositivo-card[data-type="exaustor"]{
+.dispositivo-card[data-type="exaustor"]
+{
     background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
 }
 
-.dispositivo-card[data-type="varal"]{
+.dispositivo-card[data-type="varal"]
+{
     background: linear-gradient(135deg, #a8e6cf 0%, #56ab91 100%);
 }
 
-.dispositivo-card[data-type="portao"]{
+.dispositivo-card[data-type="portao"]
+{
     background: linear-gradient(135deg, #ff7979 0%, #f06666 100%);
 }
 
-.dispositivo-card[data-type="irrigacao"]{
+.dispositivo-card[data-type="irrigacao"]
+{
     background: linear-gradient(135deg, #45b4d4 0%, #2d8aa2 100%);
+}
+
+/* Configuração da divisão dos cards */
+.dispositivo-card div
+{
+    display: flex;
+    justify-content: space-between;
+    /* Centraliza os itens */
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Configuração dos paragrafos dos cards */
+.dispositivo-card p
+{
+    font-size: 28px;
+}
+
+/* Configuração dos titulos  */
+.dispositivo-title
+{
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: #fff;
+}
+
+/* Configuração dos status dos cards */
+.dispositivo-status
+{
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Flexibilização dos cards */
+.dispositivo-flex
+{
+    /* Para poder mudar os cards de posição  */
+    display: flex;
+    /* Para dar espaçamento entre os cards */
+    justify-content: space-around;
+}
+
+
+/* ================  CONTROLES ================ */
+
+
+/* Configuração das checkbox/botões */
+
+.slider
+{
+    /* Define a posição como absoluta/ ou seja a que prevalece */
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Posição */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 26px;
+    /* Tempo de transição do botão  */
+    transition: 0.3s;
+    
+}
+
+/* Depois de aperta a checkbox/botões */
+.slider:before
+{
+    position: absolute;
+    /*  */
+    content: " ";
+    /* posição */
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    /* Tempo para mudar o checkbox/botões */
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+/* Configuração da label  */
+label
+{
+    /* Define a posição da label como relativa/ ela permite que outros conteudos, fiquem sobre ela */
+    position: relative;
+    /* Bloqueia a label para ficar fixa */
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+
+}
+
+/* Configurção do input */
+label input
+{
+    /* Transparencia da label */
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Efeito de transição */
+label input + .slider:before
+{
+    /* Transfoma o checkbox/botões para se mover */
+    transform: translateX(24px);
 }
