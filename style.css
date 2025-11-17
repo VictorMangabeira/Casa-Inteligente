@@ -217,13 +217,71 @@ label input
 {
     /* Transparencia da label */
     opacity: 0;
-    width: 0;
-    height: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* Posição. O que permite clicar */
+    position: absolute;
+    /* Tira o input da camada inferior e o coloca para a parte superior permitindo clicar no botão */
+    z-index: 2;
 }
 
 /* Efeito de transição */
-label input + .slider:before
+/* O checked e quando esta marcado */
+label input:checked + .slider:before
 {
     /* Transfoma o checkbox/botões para se mover */
     transform: translateX(24px);
 }
+
+
+/* ==================  RESPONSIVIDADE  ================== */
+
+/* Faz o controle de tamanho dos componentes para diferentes dispositivos. Usar @media */
+/* max-width define o tamanho maximo */
+@MEDIA (max-width: 480px)
+{
+    /* Modifica o tamanho a hearde/cabeçario */
+    header
+    {
+        padding: 15px;
+    }
+
+    header h1
+    {
+        font-size: 20px;
+    }
+
+    header p
+    {
+        font-size: 12px;
+    }
+
+    /* Modificação corpo da página */
+    main
+    {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    /* Modificando os cards no flex*/
+    .dispositivo-flex
+    {
+        /* Deixa os cards flexiveis */
+        display: flex;
+        /* Deixa os cards um em baixo do outro */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Modificando os cards */
+    .dispositivo-card
+    {
+        margin-bottom: 10px;
+        max-width: 250px;
+        max-height: 150px;
+
+    }
+}
+
