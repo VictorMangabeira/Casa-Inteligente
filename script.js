@@ -30,7 +30,8 @@ const portSalaTexto = document.getElementById("port-sala-texto");
 // change = modificação
 
 // ==== Lampada ====
-lampSalaInput.addEventListener("change", () => {
+lampSalaInput.addEventListener("change", () => 
+{
     // Variavel para verificar se o botão esta ligado = true 
     const ligado = lampSalaInput.checked === true;
 
@@ -39,17 +40,18 @@ lampSalaInput.addEventListener("change", () => {
     {
         console.log("Lampada ligada");
         // o * innerHTML * modifica o texto, no HTML
-        lampSalaTexto.innerHTML = "Ligado";
+        lampSalaTexto.innerHTML = "Ligada";
     }
     else
     {
         console.log("Lampada desligada");
-        lampSalaTexto.innerHTML = "Desigado";
+        lampSalaTexto.innerHTML = "Desligada";
     }
 });
 
 // ==== Cortina ====
-cortSalaInput.addEventListener("change", () => {
+cortSalaInput.addEventListener("change", () => 
+{
     const aberta = cortSalaInput.checked === true;
 
     if(aberta === true)
@@ -65,7 +67,8 @@ cortSalaInput.addEventListener("change", () => {
 });
 
 // ==== Porta ====
-portSalaInput.addEventListener("change", () => {
+portSalaInput.addEventListener("change", () => 
+{
     const aberta = portSalaInput.checked === true;
 
     if(aberta === true)
@@ -91,7 +94,8 @@ const lampCozinhaTexto = document.getElementById("lamp-cozinha-texto");
 const exausCozinhaTexto = document.getElementById("exaus-cozinha-texto");
 
 // Lampada Cozinha
-lampCozinhaInput.addEventListener("change", () => {
+lampCozinhaInput.addEventListener("change", () => 
+{
     const ligada = lampCozinhaInput.checked === true;
 
     if(ligada === true)
@@ -108,7 +112,8 @@ lampCozinhaInput.addEventListener("change", () => {
 });
 
 // Exaustor Cozinha
-exausCozinhaInput.addEventListener("change", () => {
+exausCozinhaInput.addEventListener("change", () => 
+{
     const ligado = exausCozinhaInput.checked === true;
 
     if(ligado === true)
@@ -138,7 +143,8 @@ const portVarandaTexto = document.getElementById("port-varanda-texto");
 const irVarandaTexto = document.getElementById("ir-varanda-texto");
 
 // Iluminação
-lampVarandaInput.addEventListener("change", () => {
+lampVarandaInput.addEventListener("change", () => 
+{
     const ligada = lampVarandaInput.checked === true;
 
     if(ligada === true)
@@ -154,7 +160,8 @@ lampVarandaInput.addEventListener("change", () => {
 });
 
 // Varal
-varVarandaInput.addEventListener("change", () => {
+varVarandaInput.addEventListener("change", () => 
+{
     const aberto = varVarandaInput.checked === true;
 
     if(aberto === true)
@@ -170,7 +177,8 @@ varVarandaInput.addEventListener("change", () => {
 })
 
 // Portão
-portVarandaInput.addEventListener("change", () => {
+portVarandaInput.addEventListener("change", () => 
+{
     const aberto = portVarandaInput.checked === true;
 
      if(aberto === true)
@@ -187,8 +195,20 @@ portVarandaInput.addEventListener("change", () => {
 });
 
 // irrigação
-irVarandaInput.addEventListener("change", () => {
+irVarandaInput.addEventListener("change", () => 
+{
     const ligada = irVarandaInput.checked === true;
+
+    if(ligada === true)
+    {
+        console.log("Irrigação ligada");
+        irVarandaTexto.innerHTML = "Ligada";
+    }
+    else
+    {
+        console.log("Irrigação desligada");
+        irVarandaTexto.innerHTML = "desligada";
+    }
 })
 
 //### Chamando um evento JS do tipo "DOMContentLoard", que é o evento que acontece
